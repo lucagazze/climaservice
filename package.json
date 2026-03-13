@@ -1,0 +1,8 @@
+{
+  "name": "clima-service-web",
+  "version": "1.0.0",
+  "description": "Sitio web de Clima Service",
+  "dependencies": {
+    "nodemailer": "^6.9.9"
+  }
+}
