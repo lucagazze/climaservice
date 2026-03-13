@@ -228,7 +228,7 @@
     .topbar-wa {
       display: inline-flex; align-items: center; gap: 7px;
       color: #fff; font-family: var(--fs); font-size: 13px; font-weight: 600;
-      transition: color 0.15s;
+      transition: color 0.15s; cursor: pointer;
     }
     .topbar-wa:hover { color: var(--primary-cyan); }
     .topbar-wa svg { width: 15px; height: 15px; fill: #25D366; flex-shrink: 0; }
@@ -297,7 +297,7 @@
       background: var(--primary-mid); color: #fff;
       padding: 8px 20px; border-radius: 6px;
       font-family: var(--fs); font-size: 14px; font-weight: 600;
-      transition: all 0.2s ease;
+      transition: all 0.2s ease; cursor: pointer;
     }
     .menubar-cta:hover { background: var(--primary-deep); transform: translateY(-1px); }
 
@@ -317,50 +317,42 @@
     .mobile-menu {
       display: none;
       position: fixed;
-      left: 0; right: 0;
+      left: 0; right: 0; bottom: 0;
       background: #fff;
       z-index: 250;
       flex-direction: column;
       padding: 0;
+      overflow-y: auto;
       box-shadow: 0 8px 32px rgba(15,47,168,0.18);
-      border-bottom: 3px solid var(--primary-mid);
     }
     .mobile-menu.open { display: flex; }
-    .mobile-menu-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border-lt);
-      background: #F3F6FB;
-    }
-    .mobile-menu-header .mob-title {
-      font-family: var(--fs); font-size: 13px; font-weight: 600;
-      color: var(--primary-mid); letter-spacing: 0.05em; text-transform: uppercase;
-    }
-    .mobile-close {
-      background: var(--primary-mid); border: none; cursor: pointer;
-      color: #fff; width: 36px; height: 36px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .mobile-close:hover { background: var(--primary-deep); }
-    .mobile-close svg { pointer-events: none; display: block; }
     .mobile-menu a {
       font-family: var(--fs); font-size: 15px; font-weight: 500;
       color: var(--neutral-dark);
       padding: 16px 20px;
       border-bottom: 1px solid var(--border-lt);
       display: block; width: 100%;
+      text-align: center;
+      transition: color 0.15s ease, background 0.15s ease;
     }
     .mobile-menu a:hover { color: var(--primary-mid); background: #F8FAFF; }
-    .mobile-menu-wa {
-      margin: 16px 20px 20px;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: #25D366; color: #fff;
-      padding: 14px; border-radius: 10px;
-      font-family: var(--fs); font-size: 15px; font-weight: 600;
-      text-align: center;
+    .mobile-menu-cta-wrap {
+      padding: 20px 24px 28px;
+      display: flex; justify-content: center;
     }
-    .mobile-menu-wa svg { fill: #fff; width: 18px; height: 18px; flex-shrink:0; }
+    .mobile-menu-cta-wrap a {
+      display: inline-flex !important; align-items: center; justify-content: center;
+      width: auto !important; border-bottom: none !important;
+      background: var(--primary-mid); color: #fff !important;
+      padding: 14px 36px !important; border-radius: 10px; font-weight: 700;
+      font-size: 15px; font-family: var(--fs);
+      box-shadow: 0 4px 16px rgba(26,61,191,0.30);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .mobile-menu-cta-wrap a:hover {
+      background: var(--primary-deep) !important; color: #fff !important;
+      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,61,191,0.40);
+    }
 
     /* ════════ HERO (fullscreen foto + overlay, estilo Climax Rosario) ════════ */
     .hero {
@@ -524,7 +516,7 @@
       border: 1px solid var(--border);
       background: var(--white);
       font-size: 13px; font-weight: 600; color: var(--neutral-gray);
-      letter-spacing: 0.01em; transition: all 0.2s ease; cursor: default;
+      letter-spacing: 0.01em; transition: all 0.2s ease; cursor: pointer;
       font-family: var(--fb);
     }
     .brand-pill:hover { border-color: var(--primary-mid); color: var(--primary-mid); background: var(--primary-light); }
@@ -534,10 +526,10 @@
     .service-card {
       background: var(--white); padding: 32px;
       border: 1px solid var(--border-lt); border-radius: var(--radius);
-      transition: all 0.15s ease-out; cursor: default; position: relative;
+      transition: all 0.2s ease-out; cursor: pointer; position: relative;
     }
     .service-card:hover {
-      transform: scale(1.02);
+      transform: translateY(-4px);
       box-shadow: var(--shadow);
       border-color: rgba(0,82,204,0.20);
     }
@@ -634,7 +626,7 @@
       background: linear-gradient(90deg, transparent, var(--primary-light), var(--primary-mid), var(--primary-light), transparent);
       z-index: 0;
     }
-    .process-step { padding: 0 20px; position: relative; z-index: 1; }
+    .process-step { padding: 0 20px; position: relative; z-index: 1; cursor: default; }
     .process-num {
       width: 56px; height: 56px; border-radius: var(--radius);
       background: var(--primary-light);
@@ -997,16 +989,15 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú móvil">
-  <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
   <a href="#inicio" onclick="closeMobile()">Inicio</a>
   <a href="#servicios" onclick="closeMobile()">Servicios</a>
   <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
   <a href="#proceso" onclick="closeMobile()">Proceso</a>
   <a href="#proyectos" onclick="closeMobile()">Proyectos</a>
   <a href="#contacto" onclick="closeMobile()">Contacto</a>
-  <a href="https://wa.me/5491136375920?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto" target="_blank" style="background:var(--primary-mid);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600;margin-top:8px;">Solicitar presupuesto</a>
+  <div class="mobile-menu-cta-wrap">
+    <a href="https://wa.me/5491136375920?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto" target="_blank" rel="noopener">Solicitar presupuesto</a>
+  </div>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -1547,16 +1538,11 @@
 
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  const mobileClose = document.getElementById('mobileClose');
 
-  function openMobile()  { mobileMenu.style.top = document.querySelector('header').offsetHeight + 'px'; mobileMenu.classList.add('open');  hamburger.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
-  function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  function openMobile()  { mobileMenu.style.top = document.querySelector('header').offsetHeight + 'px'; mobileMenu.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
+  function closeMobile() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
 
-  hamburger.addEventListener('click', openMobile);
-  mobileClose.addEventListener('click', closeMobile);
-  // Close on any link tap inside mobile menu
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
-  // Close on backdrop tap (if user taps outside)
+  hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMobile() : openMobile());
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
 
   const ro = new IntersectionObserver(
