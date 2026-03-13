@@ -309,11 +309,15 @@
     .hamburger span {
       display: block; width: 22px; height: 1.5px;
       background: var(--primary-deep); border-radius: 2px; transition: all 0.3s ease;
+      transform-origin: center;
     }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 0; left: 0; right: 0;
+      left: 0; right: 0;
       background: #fff;
       z-index: 250;
       flex-direction: column;
@@ -1545,7 +1549,7 @@
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileClose = document.getElementById('mobileClose');
 
-  function openMobile()  { mobileMenu.classList.add('open');  hamburger.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
+  function openMobile()  { mobileMenu.style.top = document.querySelector('header').offsetHeight + 'px'; mobileMenu.classList.add('open');  hamburger.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
   function closeMobile() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
 
   hamburger.addEventListener('click', openMobile);
