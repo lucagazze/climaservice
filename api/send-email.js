@@ -37,14 +37,14 @@ module.exports = async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER || 'info@algoritmiadesarrollos.com.ar',
+        pass: process.env.EMAIL_PASS || 'Qpzm123Qpzm-',
       },
     });
 
     const mailOptions = {
-      from: `"Contacto Clima Service" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO, // destinatario confirmado por el cliente
+      from: `"Contacto Clima Service" <${process.env.EMAIL_USER || 'info@algoritmiadesarrollos.com.ar'}>`,
+      to: 'Climaservice20@gmail.com, lucagazze1@gmail.com', // Destinatarios
       replyTo: email,
       subject: `🔔 NUEVO CONTACTO WEB: ${nombre}`,
       html: `
