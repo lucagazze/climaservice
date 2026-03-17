@@ -29,7 +29,7 @@
   <link rel="shortcut icon" href="./logoconfondo.webp">
   <link rel="apple-touch-icon" sizes="180x180" href="./logoconfondo.webp">
   <link rel="manifest" href="./site.webmanifest">
-  <meta name="theme-color" content="#1A3DBF">
+  <meta name="theme-color" content="#016d9b">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -66,9 +66,9 @@
 
     :root {
       /* ── Design Tokens — Clima Service (logo: Royal Blue + Cyan) ── */
-      --primary-deep:  #0F2FA8;
-      --primary-mid:   #1A3DBF;
-      --primary-cyan:  #00B8F0;
+      --primary-deep:  #014766;
+      --primary-mid:   #016d9b;
+      --primary-cyan:  #018ac1;
       --primary-light: #EBF4FF;
       --hero-bg:       #F8FAFF;
       --success:       #10B981;
@@ -80,13 +80,13 @@
       --white:         #FFFFFF;
 
       /* aliases */
-      --navy:      #0F2FA8;
+      --navy:      #014766;
       --navy-2:    #0A2180;
-      --navy-3:    #1A3DBF;
+      --navy-3:    #016d9b;
       --navy-4:    #2E52D6;
-      --blue:      #1A3DBF;
-      --blue-v:    #00B8F0;
-      --blue-glow: rgba(0,184,240,0.22);
+      --blue:      #016d9b;
+      --blue-v:    #018ac1;
+      --blue-glow: rgba(1,138,193,0.22);
       --blue-lt:   #EBF4FF;
       --bg:        #F3F6FB;
       --text:      #111827;
@@ -94,10 +94,10 @@
       --border:    #D1D5DB;
       --border-lt: #E5E7EB;
       --glass-bg:  rgba(255,255,255,0.75);
-      --glass-border: rgba(26,61,191,0.12);
-      --shadow-sm: 0 1px 4px rgba(15,47,168,.08);
-      --shadow:    0 4px 20px rgba(15,47,168,.12);
-      --shadow-lg: 0 12px 40px rgba(15,47,168,.16);
+      --glass-border: rgba(1,109,155,0.12);
+      --shadow-sm: 0 1px 4px rgba(1,71,102,.08);
+      --shadow:    0 4px 20px rgba(1,71,102,.12);
+      --shadow-lg: 0 12px 40px rgba(1,71,102,.16);
       --fh: 'Flexo', 'Flexo Black', 'Rajdhani', 'Orbitron', sans-serif;
       --fb: 'Mulish', system-ui, sans-serif;
       --fs: 'Roboto', sans-serif;
@@ -170,8 +170,8 @@
       white-space: nowrap; letter-spacing: 0; position: relative; overflow: hidden;
     }
 
-    .btn-blue  { background: var(--primary-mid); color: #fff; box-shadow: 0 4px 16px rgba(0,82,204,.25); }
-    .btn-blue:hover  { background: var(--primary-deep); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,82,204,.35); }
+    .btn-blue  { background: var(--primary-mid); color: #fff; box-shadow: 0 4px 16px rgba(1,91,130,.25); }
+    .btn-blue:hover  { background: var(--primary-deep); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(1,91,130,.35); }
 
     .btn-navy  { background: var(--primary-deep); color: #fff; }
     .btn-navy:hover  { background: var(--primary-mid); transform: translateY(-2px); }
@@ -208,7 +208,7 @@
     /* ════════ HEADER 3-BARRAS (estilo Climax Rosario) ════════ */
     .site-header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      box-shadow: 0 2px 20px rgba(15,47,168,0.10);
+      box-shadow: 0 2px 20px rgba(1,71,102,0.10);
     }
 
     /* Barra 1: franja oscura superior */
@@ -252,7 +252,7 @@
     .contact-block-icon {
       width: 38px; height: 38px; border-radius: 9px;
       background: var(--primary-light);
-      border: 1px solid rgba(26,61,191,0.12);
+      border: 1px solid rgba(1,109,155,0.12);
       display: flex; align-items: center; justify-content: center;
       color: var(--primary-mid); flex-shrink: 0;
     }
@@ -322,7 +322,7 @@
       z-index: 250;
       flex-direction: column;
       padding: 0;
-      box-shadow: 0 12px 40px rgba(15,47,168,0.22);
+      box-shadow: 0 12px 40px rgba(1,71,102,0.22);
       border-radius: 0 0 16px 16px;
       border-bottom: 3px solid var(--primary-mid);
     }
@@ -347,12 +347,12 @@
       background: var(--primary-mid); color: #fff !important;
       padding: 14px 36px !important; border-radius: 10px; font-weight: 700;
       font-size: 15px; font-family: var(--fs);
-      box-shadow: 0 4px 16px rgba(26,61,191,0.30);
+      box-shadow: 0 4px 16px rgba(1,109,155,0.30);
       transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
     }
     .mobile-menu-cta-wrap a:hover {
       background: var(--primary-deep) !important; color: #fff !important;
-      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,61,191,0.40);
+      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(1,109,155,0.40);
     }
 
     /* ════════ HERO (fullscreen foto + overlay, estilo Climax Rosario) ════════ */
@@ -365,7 +365,7 @@
     .hero::before { display:none; }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1800&q=85&fit=crop') center center / cover no-repeat;
+      background: url('./img_optimized/whatsapp_image_2026-03-16_at_34905_pm_1_27.webp') center center / cover no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0; z-index: 1;
@@ -403,8 +403,8 @@
     .hero-badge {
       display:inline-flex; align-items:center; gap:8px;
       padding:6px 16px 6px 8px; border-radius:999px;
-      background:rgba(0,184,240,0.15);
-      border:1px solid rgba(0,184,240,0.35);
+      background:rgba(1,138,193,0.15);
+      border:1px solid rgba(1,138,193,0.35);
       font-size:11px; font-weight:600; color:var(--primary-cyan);
       margin-bottom:28px; letter-spacing:0.07em; font-family:var(--fs);
       text-transform:uppercase;
@@ -450,14 +450,14 @@
       font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.80);
       transition: all 0.2s ease; font-family: var(--fs);
     }
-    .hero-badge-item:hover { background: rgba(0,184,240,0.20); border-color: rgba(0,184,240,0.40); color: var(--primary-cyan); }
+    .hero-badge-item:hover { background: rgba(1,138,193,0.20); border-color: rgba(1,138,193,0.40); color: var(--primary-cyan); }
     .hero-badge-item svg { width: 13px; height: 13px; stroke: var(--primary-cyan); flex-shrink: 0; }
 
     .hero-visual { position: relative; }
     .hero-img-wrap {
       border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3;
       border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,168,232,0.08);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(1,126,178,0.08);
     }
     .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -479,7 +479,7 @@
     .chip-lbl { font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 400; white-space: nowrap; font-family: var(--fb); }
     .chip-icon {
       width: 36px; height: 36px;
-      background: rgba(0,184,240,0.25);
+      background: rgba(1,138,193,0.25);
       border-radius: 9px; display: flex; align-items: center; justify-content: center;
       color: var(--primary-cyan); flex-shrink: 0;
     }
@@ -532,7 +532,7 @@
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
-      border-color: rgba(0,82,204,0.20);
+      border-color: rgba(1,91,130,0.20);
     }
     .service-icon {
       width: 48px; height: 48px;
@@ -600,7 +600,7 @@
     .testi-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
-      border-color: rgba(0,82,204,0.20);
+      border-color: rgba(1,91,130,0.20);
     }
     .testi-stars { display: flex; gap: 3px; margin-bottom: 18px; }
     .testi-stars svg { width: 14px; height: 14px; fill: var(--warning); stroke: none; }
@@ -612,7 +612,7 @@
     .testi-avatar {
       width: 38px; height: 38px; border-radius: 50%;
       background: var(--primary-light);
-      border: 1px solid rgba(0,82,204,0.20);
+      border: 1px solid rgba(1,91,130,0.20);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--fh); font-size: 12px; font-weight: 700; color: var(--primary-mid); flex-shrink: 0;
     }
@@ -635,7 +635,7 @@
       font-family: var(--fh); font-size: 20px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px; letter-spacing: -0.02em;
-      border: 2px solid rgba(0,82,204,0.20);
+      border: 2px solid rgba(1,91,130,0.20);
       transition: all 0.3s ease;
     }
     .process-step:hover .process-num {
@@ -700,7 +700,7 @@
     .cta-section::before {
       content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       width: 800px; height: 500px; border-radius: 50%;
-      background: radial-gradient(ellipse, rgba(0,184,240,0.18) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(1,138,193,0.18) 0%, transparent 70%);
       pointer-events: none;
     }
     .cta-section .container { position: relative; z-index: 1; }
@@ -726,7 +726,7 @@
     .contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 15px; color: var(--neutral-dark); }
     .contact-icon-wrap {
       width: 40px; height: 40px;
-      background: var(--primary-light); border: 1px solid rgba(0,82,204,0.20);
+      background: var(--primary-light); border: 1px solid rgba(1,91,130,0.20);
       border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .contact-icon-wrap svg { width: 17px; height: 17px; stroke: var(--primary-mid); }
@@ -753,7 +753,7 @@
     select option { background: var(--white); color: var(--neutral-dark); }
     input:focus, select:focus, textarea:focus {
       border-color: var(--primary-mid);
-      box-shadow: 0 0 0 3px rgba(0,82,204,0.12);
+      box-shadow: 0 0 0 3px rgba(1,91,130,0.12);
     }
     textarea { resize: vertical; }
     #formMsg { display: none; padding: 12px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; margin-bottom: 16px; }
@@ -1035,7 +1035,7 @@
       <!-- HERO PHOTO RIGHT -->
       <div class="hero-visual">
         <div class="hero-img-frame">
-          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=900&q=80&fit=crop" alt="Técnico instalando aire acondicionado" loading="eager">
+          <img src="./img_optimized/hero_img.png" alt="Técnico instalando aire acondicionado" loading="eager" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div class="hero-img-badge">
           <div class="badge-icon">
@@ -1130,6 +1130,14 @@
         <p>Relevamiento, proyecto técnico completo e instalación integral para obras nuevas y refacciones. Coordinamos con arquitectos y constructoras.</p>
       </div>
 
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+        </div>
+        <h3>Sistemas VRV/VRF</h3>
+        <p>Alta tecnología Inverter de caudal variable. Permite climatizar en simultáneo múltiples zonas con una única unidad exterior, logrando máxima eficiencia.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1152,8 +1160,8 @@
           <li class="why-item reveal d2">
             <div class="why-num" aria-hidden="true">2</div>
             <div>
-              <h4>100% de clientes por referidos</h4>
-              <p>Toda nuestra cartera se construyó por recomendación directa. El trabajo habla solo.</p>
+              <h4>Excelencia comprobable</h4>
+              <p>Nuestro compromiso con la calidad y los tiempos de entrega construye relaciones a largo plazo con cada cliente.</p>
             </div>
           </li>
           <li class="why-item reveal d3">
@@ -1173,7 +1181,7 @@
         </ul>
       </div>
       <div class="why-img-wrap reveal">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&fit=crop" alt="Técnico de Clima Service en instalación" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34919_pm_72.webp" alt="Técnico de Clima Service en instalación" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </div>
@@ -1184,8 +1192,8 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-label">Testimonios</span>
-      <h2>Cartera construida 100% por referidos</h2>
-      <p>Cada cliente llegó por recomendación de otro. Esto es lo que dicen sobre nuestro trabajo.</p>
+      <h2>Confianza respaldada por la industria</h2>
+      <p>Empresas líderes confían en Clima Service para garantizar el confort y la operación continua de sus instalaciones.</p>
     </div>
     <div class="testi-grid">
 
@@ -1344,27 +1352,27 @@
     <div class="gallery-grid reveal">
 
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1000&q=80&fit=crop" alt="Climatización oficinas corporativas" loading="lazy">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34859_pm_2_9.webp" alt="Climatización oficinas corporativas" loading="lazy">
         <div class="gallery-overlay"><span>Climatización de oficinas corporativas</span></div>
       </div>
 
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Sistema multisplit corporativo" loading="lazy">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34901_pm_16.webp" alt="Sistema multisplit corporativo" loading="lazy">
         <div class="gallery-overlay"><span>Sistema multisplit corporativo</span></div>
       </div>
 
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&fit=crop" alt="Servicio de mantenimiento preventivo" loading="lazy">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34903_pm_1_21.webp" alt="Servicio de mantenimiento preventivo" loading="lazy">
         <div class="gallery-overlay"><span>Mantenimiento preventivo</span></div>
       </div>
 
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&q=80&fit=crop" alt="Red de ductos para planta industrial" loading="lazy">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34916_pm_3_61.webp" alt="Red de ductos para planta industrial" loading="lazy">
         <div class="gallery-overlay"><span>Red de ductos para planta industrial</span></div>
       </div>
 
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&fit=crop" alt="Proyecto integral de climatización" loading="lazy">
+        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34912_pm_1_46.webp" alt="Proyecto integral de climatización" loading="lazy">
         <div class="gallery-overlay"><span>Proyecto integral de climatización</span></div>
       </div>
 
@@ -1617,7 +1625,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
   document.querySelectorAll('input, textarea, select').forEach(el => {
-    el.addEventListener('focus', () => el.style.borderColor = '#0052CC');
+    el.addEventListener('focus', () => el.style.borderColor = '#015b82');
     el.addEventListener('blur',  () => el.style.borderColor = '#D1D5DB');
   });
 
