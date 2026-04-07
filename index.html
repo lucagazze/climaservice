@@ -122,9 +122,9 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar { width: 12px; }
     ::-webkit-scrollbar-track { background: var(--neutral-light); }
-    ::-webkit-scrollbar-thumb { background: var(--primary-mid); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb { background: var(--primary-mid); border-radius: 99px; border: 3px solid var(--neutral-light); }
     ::-webkit-scrollbar-thumb:hover { background: var(--primary-deep); }
 
     /* ── LAYOUT ── */
@@ -368,7 +368,7 @@
     .hero::before { display:none; }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: url('./img_optimized/heroimg.webp') center center / cover no-repeat;
+      background: url('./img/climaservicemailanteriorsinefecto/puede ser como para poner si queda bien.jpg') center center / cover no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0; z-index: 1;
@@ -553,6 +553,55 @@
       margin-bottom: 10px; color: var(--neutral-dark); text-transform: uppercase;
     }
     .service-card p { font-family: var(--fb); color: var(--neutral-gray); font-size: 15px; line-height: 1.65; font-weight: 300; }
+
+    /* ── CAROUSEL SERVICIOS ── */
+    .service-carousel-wrapper {
+      margin: -32px -32px 24px -32px;
+      aspect-ratio: 1/1;
+      border-bottom: 1px solid var(--border-lt);
+      border-radius: var(--radius) var(--radius) 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      height: 100%;
+      scrollbar-width: none;
+    }
+    .service-carousel::-webkit-scrollbar { display: none; }
+    .service-carousel img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: center;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--primary-deep);
+      font-size: 14px;
+      box-shadow: var(--shadow-sm);
+      opacity: 0; transition: opacity 0.2s ease, background 0.2s ease;
+      z-index: 2;
+    }
+    .carousel-btn:hover { background: #fff; }
+    .service-carousel-wrapper:hover .carousel-btn { opacity: 1; }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    @media (max-width: 768px) {
+      .carousel-btn { opacity: 1; width: 36px; height: 36px; }
+    }
 
     /* ════════ POR QUÉ ════════ */
     .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
@@ -1092,50 +1141,120 @@
     <div class="services-grid reveal">
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h10M7 11h7"/></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/split.jpg" alt="Aire Split" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/split (2).jpg" alt="Aire Split" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/split (3).jpg" alt="Aire Split" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/split (4).jpg" alt="Aire Split" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/split (5).jpg" alt="Aire Split" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/split (6).jpg" alt="Aire Split" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Aire Split</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h10M7 11h7"/></svg>
+          Aire Split
+        </h3>
         <p>Instalación y puesta en marcha de equipos split residenciales y comerciales. Trabajo prolijo, garantizado, con las mejores marcas.</p>
       </div>
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="7" rx="1.5"/><rect x="13" y="3" width="9" height="7" rx="1.5"/><rect x="2" y="14" width="9" height="7" rx="1.5"/><rect x="13" y="14" width="9" height="7" rx="1.5"/></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/sistema multi.jpg" alt="Sistemas Multisplit" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/sistema multi (2).jpg" alt="Sistemas Multisplit" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/sistema multi (3).jpg" alt="Sistemas Multisplit" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/sistema multi (4).jpg" alt="Sistemas Multisplit" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/sistema multi (6).jpg" alt="Sistemas Multisplit" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Sistemas Multisplit</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="9" height="7" rx="1.5"/><rect x="13" y="3" width="9" height="7" rx="1.5"/><rect x="2" y="14" width="9" height="7" rx="1.5"/><rect x="13" y="14" width="9" height="7" rx="1.5"/></svg>
+          Sistemas Multisplit
+        </h3>
         <p>Una sola unidad exterior para múltiples ambientes. Ideal para oficinas y locales con climatización independiente por zonas.</p>
       </div>
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/conductos.jpg" alt="Redes de ductos" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/conductos (2).jpg" alt="Redes de ductos" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/conductos (3).jpg" alt="Redes de ductos" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/conductos (4).jpg" alt="Redes de ductos" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/conductos reja.jpg" alt="Redes de ductos" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Redes</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          Redes
+        </h3>
         <p>Diseño e instalación de redes de ductos y sistemas centralizados para grandes superficies, industrias y proyectos de obra.</p>
       </div>
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/mantenimiento.jpg" alt="Mantenimiento" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/mantenimiento (2).jpg" alt="Mantenimiento" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/mantenimiento (3).jpg" alt="Mantenimiento" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/mantenimiento (4).jpg" alt="Mantenimiento" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/mantenimiento (5).jpg" alt="Mantenimiento" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Mantenimiento</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          Mantenimiento
+        </h3>
         <p>Contratos preventivos y correctivos. Revisiones periódicas, limpieza de filtros, carga de gas y asistencia técnica ante fallas.</p>
       </div>
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra.jpg" alt="Proyecto y Obra" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (2).jpg" alt="Proyecto y Obra" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (3).jpg" alt="Proyecto y Obra" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (4).jpg" alt="Proyecto y Obra" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (5).jpg" alt="Proyecto y Obra" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (6).jpg" alt="Proyecto y Obra" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Proyecto y Obra</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Proyecto y Obra
+        </h3>
         <p>Relevamiento, proyecto técnico completo e instalación integral para obras nuevas y refacciones. Coordinamos con arquitectos y constructoras.</p>
       </div>
 
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+        <div class="service-carousel-wrapper has-arrows">
+          <div class="service-carousel">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf.jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (2).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (3).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (4).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (5).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (6).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+            <img src="./img/climaservicemailanteriorsinefecto/vrf (7).jpg" alt="Sistemas VRV/VRF" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
         </div>
-        <h3>Sistemas VRV/VRF</h3>
+        <h3 style="display:flex; align-items:center; gap:8px;">
+          <svg style="width:24px;height:24px;color:var(--primary-mid);flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          Sistemas VRV/VRF
+        </h3>
         <p>Alta tecnología Inverter de caudal variable. Permite climatizar en simultáneo múltiples zonas con una única unidad exterior, logrando máxima eficiencia.</p>
       </div>
 
@@ -1182,7 +1301,7 @@
         </ul>
       </div>
       <div class="why-img-wrap reveal">
-        <img src="./img_optimized/hero_img_v2.png" alt="Técnico de Clima Service en instalación" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra.jpg" alt="Técnico de Clima Service en instalación" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
   </div>
@@ -1353,19 +1472,19 @@
     <div class="gallery-grid reveal">
 
       <div class="gallery-item">
-        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34902_pm_2_18.webp" alt="Climatización oficinas corporativas" loading="lazy">
+        <img src="./img/climaservicemailanteriorsinefecto/mantenimiento.jpg" alt="Técnicos realizando tareas de mantenimiento" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34901_pm_16.webp" alt="Sistema multisplit corporativo" loading="lazy">
+        <img src="./img/climaservicemailanteriorsinefecto/conductos (2).jpg" alt="Técnico instalando red de ductos" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34903_pm_1_21.webp" alt="Servicio de mantenimiento preventivo" loading="lazy">
+        <img src="./img/climaservicemailanteriorsinefecto/mantenimiento (4).jpg" alt="Técnicos realizando labor" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="./img_optimized/whatsapp_image_2026-03-16_at_34858_pm_1_5.webp" alt="Red de ductos para planta industrial" loading="lazy">
+        <img src="./img/climaservicemailanteriorsinefecto/proyecto y obra (2).jpg" alt="Técnicos en obra de climatización" loading="lazy">
       </div>
 
     </div>
@@ -1673,6 +1792,35 @@
       }
     });
   }
+
+  // Carousel JS
+  document.querySelectorAll('.service-carousel-wrapper.has-arrows').forEach(wrapper => {
+    const carousel = wrapper.querySelector('.service-carousel');
+    const prev = wrapper.querySelector('.prev');
+    const next = wrapper.querySelector('.next');
+    
+    if(next && prev && carousel) {
+      next.addEventListener('click', () => {
+        const w = carousel.clientWidth;
+        // Si estamos al final (o muy cerca del final), volvemos al inicio suavemente
+        if (Math.ceil(carousel.scrollLeft + w) >= carousel.scrollWidth) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: w, behavior: 'smooth' });
+        }
+      });
+      prev.addEventListener('click', () => {
+        const w = carousel.clientWidth;
+        // Si estamos al principio, saltamos al final
+        if (carousel.scrollLeft <= 0) {
+          carousel.scrollTo({ left: carousel.scrollWidth, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: -w, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+
 </script>
 </body>
 </html>
