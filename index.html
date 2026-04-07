@@ -364,6 +364,7 @@
       background: #0a1628;
       position: relative; overflow: hidden;
       display: flex; align-items: center;
+      padding-top: 162px;
     }
     .hero::before { display:none; }
     .hero-bg {
@@ -385,7 +386,7 @@
     .hero-glow-2 { display:none; }
 
     /* 3-bar header ≈ 36+80+46 = 162px */
-    .hero .container { position:relative; z-index:2; padding-top:180px; padding-bottom:80px; width:100%; }
+    .hero .container { position:relative; z-index:2; padding-top:40px; padding-bottom:40px; width:100%; }
     .hero-inner { display:block; max-width:900px; }
     .hero-visual { display:none !important; }
 
@@ -899,12 +900,13 @@
       .logo { font-size: 13px; }
 
       /* ── Hero ───────────────────── */
-      .hero .container { padding-top: 110px; padding-bottom: 60px; }
+      .hero { min-height: 80vh; padding-top: 110px; }
+      .hero .container { padding-top: 40px; padding-bottom: 40px; }
       .hero h1 { font-size: clamp(24px, 8vw, 38px); }
       .hero h1 .hero-h1-accent { font-size: clamp(14px, 4vw, 18px); }
       .hero-sub { font-size: 15px; }
-      .hero-ctas { flex-direction: column; align-items: stretch; }
-      .hero-ctas .btn { justify-content: center; width: 100%; }
+      .hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; margin-bottom: 24px; }
+      .hero-ctas .btn { justify-content: center; width: 100%; padding: 12px 20px; font-size: 15px; }
       .hero-trust { justify-content: center; }
 
       /* ── Why ────────────────────── */
@@ -961,6 +963,10 @@
       <div class="topbar-inner">
         <span class="topbar-slogan">Instalación, mantenimiento y servicio técnico de climatización &middot; Buenos Aires</span>
         <div class="topbar-right">
+          <a href="https://www.instagram.com/clima.service20/#/" target="_blank" rel="noopener" class="topbar-wa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            Instagram
+          </a>
           <a href="https://wa.me/5491136375920" target="_blank" rel="noopener" class="topbar-wa">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.994 0C5.363 0 0 5.374 0 12c0 2.117.549 4.108 1.508 5.845L.057 23.617a.5.5 0 00.61.61l5.74-1.46A11.944 11.944 0 0011.994 24C18.625 24 24 18.626 24 12S18.625 0 11.994 0zm0 21.818a9.823 9.823 0 01-5.003-1.366l-.359-.213-3.715.946.982-3.617-.233-.372A9.836 9.836 0 012.182 12c0-5.414 4.398-9.818 9.812-9.818 5.414 0 9.812 4.404 9.812 9.818 0 5.415-4.398 9.818-9.812 9.818z"/></svg>
             WhatsApp: +54 9 11 3637-5920
@@ -1628,6 +1634,7 @@
       <div class="footer-col">
         <h4>Contacto</h4>
         <ul>
+          <li><a href="https://www.instagram.com/clima.service20/#/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://wa.me/5491136375920" target="_blank" rel="noopener">+54 9 11 3637-5920</a></li>
           <li><a href="mailto:climaservice20@gmail.com">Email</a></li>
           <li><a href="#inicio">Buenos Aires, Argentina</a></li>
